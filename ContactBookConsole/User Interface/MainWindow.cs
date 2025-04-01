@@ -8,6 +8,7 @@ using System.Runtime.ConstrainedExecution;
 using System.Security.Claims;
 using System.Text;
 using System.Threading.Tasks;
+using ContactBookConsole.Random_Info_Generator;
 using ContactBookLib;
 
 
@@ -132,16 +133,8 @@ namespace ContactBookConsole.User_Interface
         public static void MainMethodTest()
         {
             ContactBook contactBook = new ContactBook();
-            contactBook.AddContact(new Contact("John Doe", "john.doe@email.com", "555 - 1234", "123 Elm St Springfield IL"));
-            contactBook.AddContact(new Contact("Jane Smith", "jane.smith@email.com", "555-5678", "456 Oak St Rivertown TX"));
-            contactBook.AddContact(new Contact("Tom Brown", "tom.brown@email.com", "555-8765", "789 Pine St Lakeview CA"));
-            contactBook.AddContact(new Contact("Sara Lee", "sara.lee@email.com", "555-4321", "101 Maple St Greenfield WI"));
-            contactBook.AddContact(new Contact("Mike Johnson", "mike.johnson@email.com", "555-2345", "202 Birch St Clearwater FL"));
-            contactBook.AddContact(new Contact("Anna White", "anna.white@email.com", "555-6789", "303 Cedar St Pleasantville NY"));
-            contactBook.AddContact(new Contact("Chris Davis", "chris.davis@email.com", "555-9876", "404 Cherry St Hilltop OH"));
-            contactBook.AddContact(new Contact("Olivia Wilson", "olivia.wilson@email.com", "555-5432", "505 Walnut St Brooksville KY"));
-            contactBook.AddContact(new Contact("David Harris", "david.harris@email.com", "555-1122", "606 Pineapple St Fairview CO"));
-            contactBook.AddContact(new Contact("Emily Clark", "emily.clark@email.com", "555-3456", "707 Magnolia St Midtown NC"));
+            for (int i = 0; i < 10; i++)
+                contactBook.AddContact(new Contact());
             while (true)
             {
                 Show(contactBook);

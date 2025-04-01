@@ -1,4 +1,6 @@
-﻿namespace ContactBookLib
+﻿using ContactBookConsole.Random_Info_Generator;
+
+namespace ContactBookLib
 {
     public class Contact
     {
@@ -13,6 +15,14 @@
             _email = email;
             _phone = phone;
             _address = address;
+        }
+        public Contact()
+        {
+            string[] nameAndEmail = RandomName.RandomFullNameAndEmail();
+            _name = nameAndEmail[0];
+            _email = nameAndEmail[1];
+            _phone = RandomPhone.RandomPhoneNumber();
+            _address = RandomAddress.RandomFullAddress();
         }
         public void UpdateContact(string name, string email, string phone, string address)
         {
